@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from './react.svg';
+import React from 'react'
+import logo from './react.svg'
 
-import './Home.css';
+import './Home.css'
 
 class Home extends React.Component<{}, {}> {
   public render() {
@@ -12,8 +12,8 @@ class Home extends React.Component<{}, {}> {
           <h2>Welcome to Razzles</h2>
         </div>
         <p className="Home-intro">
-          To get started, edit <code>src/App.tsx</code> or{' '}
-          <code>src/Home.tsx</code> and save to reload.
+          To get started, edit <code>src/App.tsx</code> or <code>src/Home.tsx</code> and save to
+          reload.
         </p>
         <ul className="Home-resources">
           <li>
@@ -27,8 +27,8 @@ class Home extends React.Component<{}, {}> {
           </li>
         </ul>
       </div>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home
