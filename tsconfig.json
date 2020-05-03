@@ -20,7 +20,11 @@
     "strict": true,
     "pretty": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es2016"
+    "target": "es2016",
+    "plugins": [
+      { "name": "typescript-tslint-plugin" }
+    ],
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",

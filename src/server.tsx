@@ -1,3 +1,5 @@
+import preset from '@rebass/preset'
+import { ThemeProvider } from 'emotion-theming'
 import express from 'express'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
@@ -12,15 +14,21 @@ const syncLoadAssets = () => {
 }
 syncLoadAssets()
 
+const theme = {
+  ...preset
+}
+
 const server = express()
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR!))
   .get('/*', (req: express.Request, res: express.Response) => {
     const context = {}
     const markup = renderToString(
-      <StaticRouter context={context} location={req.url}>
-        <App />
-      </StaticRouter>
+      <ThemeProvider theme={theme}>
+        <StaticRouter context={context} location={req.url}>
+          <App />
+        </StaticRouter>
+      </ThemeProvider>
     )
     res.send(
       `<!doctype html>

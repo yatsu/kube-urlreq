@@ -1,13 +1,21 @@
+import preset from '@rebass/preset'
+import { ThemeProvider } from 'emotion-theming'
 import React from 'react'
 import { hydrate } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
 
+const theme = {
+  ...preset
+}
+
 hydrate(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <ThemeProvider theme={theme}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ThemeProvider>,
   document.getElementById('root')
 )
 
