@@ -1,6 +1,5 @@
 import React from 'react'
-import { Box, Button, Flex, Heading } from 'rebass'
-import { Input } from '@rebass/forms'
+import { Box, Button, Flex, Heading, Input } from 'theme-ui'
 
 import './Home.css'
 

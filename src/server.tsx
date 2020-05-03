@@ -1,11 +1,11 @@
-import preset from '@rebass/preset'
-import { ThemeProvider } from 'emotion-theming'
 import express from 'express'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
+import { ThemeProvider } from 'theme-ui'
 
 import App from './App'
+import theme from './theme'
 
 let assets: any
 
@@ -13,10 +13,6 @@ const syncLoadAssets = () => {
   assets = require(process.env.RAZZLE_ASSETS_MANIFEST!)
 }
 syncLoadAssets()
-
-const theme = {
-  ...preset
-}
 
 const server = express()
   .disable('x-powered-by')
