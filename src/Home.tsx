@@ -1,19 +1,22 @@
 import React from 'react'
-import { Box, Button, Heading } from 'rebass'
+import { Box, Button, Flex, Heading } from 'rebass'
+import { Input } from '@rebass/forms'
 
 import './Home.css'
 
 class Home extends React.Component<{}, {}> {
   public render() {
     return (
-      <Box variant="styles.root" p={3} sx={{ textAlign: 'center' }}>
+      <Box as="form" variant="styles.root" p={3} sx={{ textAlign: 'center' }}>
         <Heading as="h1" mb={4}>
-          Rebass Sandbox
+          URL Request Check
         </Heading>
-        <Button variant="primary" mr={3}>
-          Beep
-        </Button>
-        <Button variant="outline">Boop</Button>
+        <Flex>
+          <Input id="name" name="name" defaultValue="Jane Doe" />
+          <Button variant="primary" mr={3}>
+            GET
+          </Button>
+        </Flex>
       </Box>
     )
   }
