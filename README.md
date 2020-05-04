@@ -1,4 +1,4 @@
-# kube-urllreq
+# kube-urlreq
 
 ## Tips
 
